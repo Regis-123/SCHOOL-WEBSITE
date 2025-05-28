@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="style.css">
     <!-- Add AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     <link rel="icon" href="pics/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -33,32 +34,35 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="Index1.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="About Us1.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="programs1.html">Tracks</a></li>
-                    <li class="nav-item"><a class="nav-link" href="Contact1.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Index1.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="About Us1.php">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="programs1.php">Academic</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contact1.php">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Directory.php">Directory</a></li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="admissionDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Admission
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="admissionDropdown">
-                            <li><a class="dropdown-item" href="registration.html">Registration</a></li>
-                            <li><a class="dropdown-item" href="login.html">Login</a></li>
+                            <li><a class="dropdown-item" href="registration.php">Registration</a></li>
+                            <li><a class="dropdown-item" href="login.php">Login</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="admission1.html">Admission Info</a></li>
+                            <li><a class="dropdown-item" href="admission1.php">Admission Info</a></li>
                         </ul>
                     </li>
                 </ul>
-                <form class="d-flex ms-lg-3">
-                    <label for="search-input" class="visually-hidden">Search</label>
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                        id="search-input">
-                    <button class="btn btn-outline-primary" type="submit">Search</button>
-                </form>
-            </div>
+               <form class="d-flex ms-lg-3" id="navbar-search-form" role="search">
+          <label for="navbar-search-input" class="visually-hidden">Search</label>
+          <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search" id="navbar-search-input" name="query" />
+          <button class="btn btn-outline-primary" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+          </div>
         </div>
     </nav>
     <!-- Improved About Us Header -->
@@ -186,8 +190,7 @@
                         <img src="pics/r1.jpg" class="card-img-top" alt="Modern Classroom Facility">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Modern Classrooms</h5>
-                            <p class="card-text flex-grow-1">Spacious and well-equipped classrooms with [mention
-                                features, e.g., interactive whiteboards, ergonomic furniture].</p>
+                            
                         </div>
                     </div>
                 </div>
@@ -196,8 +199,7 @@
                         <img src="pics/computer lab.jpg" class="card-img-top" alt="Specialized Laboratory Facility">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Specialized Laboratories</h5>
-                            <p class="card-text flex-grow-1">State-of-the-art labs for [mention subjects, e.g., science,
-                                computer, culinary arts] with industry-standard equipment.</p>
+                            
                         </div>
                     </div>
                 </div>
@@ -206,8 +208,7 @@
                         <img src="pics/library.jpg" class="card-img-top" alt="School Library">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Library and Learning Resources</h5>
-                            <p class="card-text flex-grow-1">A comprehensive library and access to digital resources to
-                                support research and study.</p>
+                            
                         </div>
                     </div>
                 </div>
@@ -317,11 +318,16 @@
                 </div>
                 <div class="col-md-4 mb-4">
                     <h3 class="fw-bold mb-2" style="font-size: 1.3rem;">Quick Links</h3>
-                    <ul class="footer-links list-unstyled mb-0">
-                        <li><a href="Index1.html" class="footer-link">Home</a></li>
-                        <li><a href="About Us1.html" class="footer-link">About</a></li>
-                        <li><a href="programs1.html" class="footer-link">Tracks</a></li>
-                        <li><a href="admission1.html" class="footer-link">Admission Info</a></li>
+                     <ul class="footer-links">
+                    <li><a href="Index1.php">Home</a></li>
+                    <li><a href="About Us1.php">About</a></li>
+                    <li><a class="active" href="programs1.php">Academic</a></li>
+                    <li><a href="Contact1.php">Contact</a></li>
+                    <li><a href="Directory.php">Directory</a></li>
+                    <li><a href="admission1.php">Admission Info</a></li>
+                    <li><a href="registration.php">Registration</a></li>
+                    <li><a href="login.php">Login</a></li>
+                
                     </ul>
                 </div>
                 <div class="col-md-4 mb-4">
@@ -340,98 +346,239 @@
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
                 <p class="mb-2 mb-md-0 small text-muted">© 2025 by IIH COLLEGE. All rights reserved.</p>
                 <div class="footer-legal-links small">
-                    <a href="#" class="footer-link">Privacy Policy</a> |
+                    <a href="#" class="footer-link" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal">Privacy Policy</a> |
                     <a href="#" class="footer-link">Data Policy</a> |
-                    <a href="#" class="footer-link">Legal Disclaimers</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <!-- Add AOS JS and initialization -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true,
-            mirror: false
-        });
-    </script>
-    <script>
-       
-       
+    <!-- Privacy Policy Modal -->
+    <div class="modal fade privacy-popup" id="privacyPolicyModal" tabindex="-1" aria-labelledby="privacyPolicyModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="privacyPolicyModalLabel">
+                        <i class="fas fa-lock me-2"></i> Privacy Notice
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>In accordance with the Data Privacy Act of 2012 (RA 10173), IIHC SCHOOL would like to obtain your
+                        consent for:</p>
 
-        // Back to top button functionality
-        const backToTopButton = document.getElementById('back-to-top');
-        const scrollThreshold = 300;
+                    <ul class="privacy-list mb-3">
+                        <li>Collection and processing of student information</li>
+                        <li>Use of educational records and academic data</li>
+                        <li>Website analytics and performance tracking</li>
+                        <li>School communications and updates</li>
+                    </ul>
 
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > scrollThreshold) {
-                backToTopButton.classList.add('show');
-            } else {
-                backToTopButton.classList.remove('show');
-            }
-        });
+                    <p>Our website uses necessary cookies to enhance your browsing experience and help us improve our
+                        services.</p>
 
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+                    <div class="contact-info mt-3">
+                        <p class="mb-2"><small>For privacy concerns, contact our Data Protection Officer:</small></p>
+                        <p class="mb-1"><small><i class="fas fa-envelope me-2"></i>iihclaforteza@gmail.com</small>
+                        </p>
+                        <p class="mb-0"><small><i class="fas fa-phone me-2"></i>0967 892 9232</small></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">I ACCEPT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Your existing code above... -->
 
-        // Stats counter animation
-        const stats = document.querySelectorAll('.stat-number');
+<!-- Existing content remains untouched -->
 
-        const animateStats = () => {
-            stats.forEach(stat => {
-                const target = parseInt(stat.getAttribute('data-count'));
-                const duration = 2000; // 2 seconds
-                const step = target / (duration / 16); // 60fps
-                let current = 0;
+<!-- Scripts -->
+<script src="js/bootstrap.bundle.min.js"></script>
+<!-- Add AOS JS and init -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, easing: 'ease-in-out', once: true, mirror: false });
+</script>
 
-                const updateCount = () => {
-                    current += step;
-                    if (current < target) {
-                        stat.textContent = Math.floor(current);
-                        requestAnimationFrame(updateCount);
-                    } else {
-                        stat.textContent = target;
-                    }
-                };
+<!-- Back to Top Button & Stats & Modal & Search Scripts -->
+<script>
+  // Back to top button
+  const backToTop = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 
-                updateCount();
-            });
-        };
+  // Stats count animation
+  const stats = document.querySelectorAll('.stat-number');
+  const animateStats = () => {
+    stats.forEach(stat => {
+      const target = parseInt(stat.getAttribute('data-count'));
+      let current = 0;
+      const duration = 2000;
+      const stepTime = Math.max(20, Math.floor(duration / target));
+      const step = () => {
+        current += Math.ceil(target / (duration / stepTime));
+        if (current >= target) {
+          current = target;
+        }
+        stat.textContent = current;
+        if (current < target) {
+          setTimeout(step, stepTime);
+        }
+      };
+      step();
+    });
+  };
+  // Animate when stats section in view
+  const statsObserver = new IntersectionObserver((entries, obs) => {
+    if (entries[0].isIntersecting) {
+      animateStats();
+      obs.disconnect();
+    }
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.stats-section').forEach(sec => statsObserver.observe(sec));
 
-        // Intersection Observer for stats animation
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateStats();
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
 
-        document.querySelectorAll('.stats-section').forEach(section => {
-            observer.observe(section);
-        });
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchForm = document.getElementById('navbar-search-form');
+    const searchInput = document.getElementById('navbar-search-input');
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+    // Create container for search results
+    const resultsContainer = document.createElement('div');
+    resultsContainer.id = 'search-results-container';
+    resultsContainer.className = 'search-results-container position-absolute bg-white border p-2 rounded d-none';
+    resultsContainer.style.top = '60px';
+    resultsContainer.style.right = '20px';
+    resultsContainer.style.width = '300px';
+    resultsContainer.style.zIndex = '1050';
+    document.body.appendChild(resultsContainer);
 
+    let debounceTimer;
+
+    function escapeRegex(str) {
+      return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    function removeHighlights() {
+      document.querySelectorAll('.search-highlight').forEach(span => {
+        const parent = span.parentNode;
+        parent.replaceChild(document.createTextNode(span.textContent), span);
+        parent.normalize();
+      });
+    }
+
+    function performSearch(query) {
+      removeHighlights();
+      resultsContainer.innerHTML = '';
+      resultsContainer.classList.add('d-none');
+
+      const trimmedQuery = query.trim();
+      if (trimmedQuery.length < 3) return;
+
+      const elements = document.querySelectorAll('p, li, h1, h2, h3, h4, h5, h6, td, th, a, span, .card-text');
+      const results = [];
+      let firstMatchedElement = null;
+
+      const regex = new RegExp(`(${escapeRegex(trimmedQuery)})`, 'gi');
+
+      elements.forEach(el => {
+        const originalHTML = el.innerHTML;
+        const text = el.textContent;
+
+        if (text.toLowerCase().includes(trimmedQuery.toLowerCase())) {
+          // Highlight all matches
+          el.innerHTML = originalHTML.replace(regex, '<span class="search-highlight">$1</span>');
+          
+          // Assign a unique ID if none
+          if (!el.id) {
+            el.id = 'search-highlight-' + Math.random().toString(36).substr(2, 9);
+          }
+          
+          results.push({ element: el, text: text });
+          
+          // Remember the first match
+          if (!firstMatchedElement) {
+            firstMatchedElement = el;
+          }
+        }
+      });
+
+      if (results.length > 0) {
+        resultsContainer.innerHTML = `
+          <div class="small text-muted mb-2">${results.length} results found</div>
+          <div class="search-results-list">
+            ${results.slice(0, 5).map((res, index) => `
+              <div class="search-result-item" style="cursor:pointer;" data-scroll-to="${res.element.id}">Match ${index + 1}</div>
+            `).join('')}
+          </div>
+        `;
+        resultsContainer.classList.remove('d-none');
+
+        // Scroll to the first match
+        if (firstMatchedElement && firstMatchedElement.id) {
+          document.getElementById(firstMatchedElement.id).scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      } else {
+        resultsContainer.innerHTML = '<div class="text-muted p-2">No results found</div>';
+        resultsContainer.classList.remove('d-none');
+      }
+    }
+
+    // Event listeners
+    searchForm.addEventListener('submit', e => {
+      e.preventDefault();
+      performSearch(searchInput.value);
+    });
+
+    searchInput.addEventListener('input', () => {
+      clearTimeout(debounceTimer);
+      if (searchInput.value.length > 2) {
+        debounceTimer = setTimeout(() => performSearch(searchInput.value), 250);
+      } else {
+        removeHighlights();
+        resultsContainer.classList.add('d-none');
+      }
+    });
+
+    resultsContainer.addEventListener('click', e => {
+      const item = e.target.closest('.search-result-item');
+      if (item) {
+        const targetId = item.getAttribute('data-scroll-to');
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        resultsContainer.classList.add('d-none');
+      }
+    });
+
+    document.addEventListener('click', e => {
+      if (!e.target.closest('#navbar-search-form') && !e.target.closest('#search-results-container')) {
+        resultsContainer.classList.add('d-none');
+      }
+    });
+  });
+</script>
 </body>
-
 </html>
+
