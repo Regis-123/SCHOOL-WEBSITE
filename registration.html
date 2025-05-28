@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IIHC Enrollment</title>
+    <link rel="stylesheet" href="styless.css">
+    <style>
+        .account-links {
+            text-align: center;
+            margin-bottom: 15px; /* Add some space below the links */
+        }
+
+        .account-links a {
+            text-decoration: none;
+            color: blue; /* Or any color you prefer */
+            margin: 0 10px; /* Add some spacing between the links */
+        }
+
+        .account-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="account-links">
+           
+           
+        </div>
+        <h2>SIGN UP<br />TO ENROLL</h2>
+
+        <label for="firstname">FIRSTNAME</label>
+        <input type="text" id="firstname" placeholder="FIRSTNAME" />
+
+        <label for="lastname">LASTNAME</label>
+        <input type="text" id="lastname" placeholder="LASTNAME" />
+
+        <label for="middlename">MIDDLE NAME</label>
+        <input type="text" id="middlename" placeholder="MIDDLE NAME" />
+
+        <label for="USERNAME">USERNAME</label>
+        <input type="text" id="USERNAME" placeholder="USERNAME" />
+
+        <label for="password">PASSWORD</label>
+        <input type="password" id="password" placeholder="PASSWORD" />
+
+        <label for="confirm-password">CONFIRM PASSWORD</label>
+        <input type="password" id="confirm-password" placeholder="CONFIRM PASSWORD" />
+        <br>
+        <label for="date">DATE OF BIRTH</label>
+        <input type="date" id="date" name="date" placeholder="date">
+
+
+        <label for="address">ADDRESS</label>
+        <input type="text" id="address" placeholder="ADDRESS" />
+
+        <label for="contact">CONTACT</label>
+        <input type="text" id="contact" placeholder="CONTACT" />
+        <div class="login-link">
+            Already have an account? <a href="login.html">Log in</a>
+        </div>
+
+        <form onsubmit="handleSubmit(event)">
+            <!-- your input fields here -->
+        
+            <div class="button-wrapper">
+                <button type="submit">CREATE</button>
+            </div>
+        </form>
+        
+        <script>
+            function handleSubmit(event) {
+                event.preventDefault(); // prevent actual form submission
+        
+                // OPTIONAL: you can add validation here
+        
+                // simulate account creation
+                alert("Account created successfully!");
+                window.location.href = "login.html"; // redirect to login page
+            }
+        </script>
+        
+        
+
+    </div>
+</body>
+</html>
